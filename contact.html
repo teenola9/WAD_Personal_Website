@@ -1,1 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Trevor Akinola</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Trevor Akinola</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="showcase.html">Showcase</a>
+        <a href="problem-solving.html">Problem-Solving</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav">☰</button>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h1>Contact</h1>
+    <p>If you want to reach me:</p>
+
+    <ul class="contact-list">
+      <li><strong>Email:</strong> <a href="mailto:trevor@example.com">trevor@example.com</a></li>
+      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn /trevor</a></li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a></li>
+      <li><strong>Instagram:</strong> <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">@yourhandle</a></li>
+    </ul>
+
+    <h2>Quick message</h2>
+    <!-- Simple mailto form fallback for quick message -->
+    <form id="contact-mailto-form" class="card">
+      <label>
+        Name
+        <input type="text" name="name" id="c-name" required>
+      </label>
+      <label>
+        Message
+        <textarea name="message" id="c-message" required></textarea>
+      </label>
+      <button type="button" class="btn" id="send-contact-mail">Generate Email</button>
+      <p class="muted">This will open your email client with a prefilled message (no server required).</p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year2"></span> Trevor Akinola</small>
+    </div>
+  </footer>
+</body>
+</html>
 
