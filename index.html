@@ -1,86 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Professional Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MR. TREVOR AKINOLA — Portfolio</title>
+
+  <!-- Condensed font for header (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <h1 class="logo">My Portfolio</h1>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="problem-solving.html">Problem-Solving</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+  <!-- Page wrapper for entrance animation -->
+  <div class="page-fade">
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+      <nav class="nav">
+        <a class="nav__brand" href="#">TADENI</a>
+        <ul class="nav__links">
+          <li><a class="nav__link active" href="#home">Home</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero / Home Section -->
+    <main id="home" class="hero">
+      <div class="hero__inner">
+        <!-- Left: photo -->
+        <div class="hero__left">
+          <div class="photo-wrap">
+            <img src="assets/trevor.jpg" alt="Trevor Akinola" class="photo" />
+          </div>
         </div>
-    </nav>
 
-    <main class="container">
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Welcome to My Professional Portfolio</h1>
-                <p class="subtitle">Web Developer | Problem Solver | Digital Innovator</p>
-            </div>
-        </section>
+        <!-- Right: Name + Titles -->
+        <div class="hero__right">
+          <!-- Typing name -->
+          <h1 class="hero__name typing" aria-live="polite">
+            <span id="nameTyping" aria-hidden="true"></span><span class="caret" aria-hidden="true"></span>
+            <span class="sr-only">MR. TREVOR AKINOLA</span>
+          </h1>
 
-        <section class="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>
-                    I am a passionate web developer with a strong foundation in creating dynamic and user-centered digital solutions. 
-                    My journey in technology has been driven by a commitment to solving real-world business problems through innovative 
-                    web development and digital transformation strategies.
-                </p>
-                <p>
-                    With experience spanning front-end development, user experience design, and business analysis, I specialize in 
-                    building websites and applications that not only look professional but also deliver measurable results for businesses. 
-                    My approach combines technical expertise with strategic thinking to create solutions that enhance customer engagement 
-                    and streamline business operations.
-                </p>
-                <p>
-                    Currently, I am focused on expanding my skills in modern web technologies including responsive design, interactive 
-                    user interfaces, and digital marketing integration. My goal is to continue growing as a full-stack developer while 
-                    helping businesses transition into the digital age with confidence and success.
-                </p>
-            </div>
-        </section>
-
-        <section class="interests">
-            <h2>Professional Interests & Goals</h2>
-            <div class="interests-grid">
-                <div class="interest-card">
-                    <h3>Web Development</h3>
-                    <p>Creating responsive, accessible websites that provide exceptional user experiences across all devices.</p>
-                </div>
-                <div class="interest-card">
-                    <h3>Digital Transformation</h3>
-                    <p>Helping traditional businesses modernize their operations through strategic digital solutions.</p>
-                </div>
-                <div class="interest-card">
-                    <h3>User Experience</h3>
-                    <p>Designing intuitive interfaces that prioritize user needs and drive engagement.</p>
-                </div>
-                <div class="interest-card">
-                    <h3>Continuous Learning</h3>
-                    <p>Staying current with emerging technologies and industry best practices to deliver cutting-edge solutions.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta">
-            <h2>Let's Work Together</h2>
-            <p>I'm always interested in new opportunities and collaborations. Feel free to reach out to discuss your project.</p>
-            <a href="contact.html" class="btn">Get In Touch</a>
-        </section>
+          <!-- Titles typed & looped -->
+          <div class="hero__titles" id="titleTyping" aria-live="polite"></div>
+        </div>
+      </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Professional Portfolio. All rights reserved.</p>
-    </footer>
+  </div>
+
+  <!-- Sticky resume button at bottom-right -->
+  <a id="resumeBtn" class="resume-sticky" href="assets/trevor_cv.pdf" download="Trevor_Akinola_CV.pdf" aria-label="Download Trevor Akinola CV">Resume</a>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
