@@ -1,53 +1,103 @@
-// Main JS for portfolio
-// Enhances the booking form on problem.html by validating inputs and generating a mailto link
+// Typing utilities and setup
 
-document.addEventListener('DOMContentLoaded', function(){
-  var form = document.getElementById('bookingForm');
-  if(!form) return;
+// Name typing settings
+const nameText = "MR. TREVOR AKINOLA";
+const nameElem = document.getElementById('nameTyping');
 
-  var result = document.getElementById('result');
+// Titles (looped)
+const titles = [
+  "Founder / CEO of Tadeni LTD",
+  "Web App Developer",
+  "Data Analyst",
+  "Marketing Strategist",
+  "UI/UX Developer"
+];
+const titleElem = document.getElementById('titleTyping');
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
+// Speed configs (ms)
+const TYPE_SPEED = 60;
+const DELETE_SPEED = 40;
+const TITLE_PAUSE = 1200; // pause after typing a title
+const BETWEEN_TITLES_PAUSE = 600; // short pause before deleting
+const INITIAL_NAME_DELAY = 250; // wait a bit before typing name
 
-    // gather values
-    var name = document.getElementById('name').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var date = document.getElementById('date').value;
-    var time = document.getElementById('time').value;
-    var party = document.getElementById('party').value;
-    var message = document.getElementById('message').value.trim();
-
-    // basic validation
-    if(!name || !email){
-      result.textContent = 'Please provide your name and email.';
-      result.style.color = 'red';
-      return;
-    }
-
-    // build email body
-    var body = [];
-    body.push('Name: ' + name);
-    body.push('Email: ' + email);
-    if(date) body.push('Date: ' + date);
-    if(time) body.push('Time: ' + time);
-    body.push('Party size: ' + party);
-    if(message) body.push('\nMessage:\n' + message);
-
-    var subject = encodeURIComponent('Booking/Feedback from ' + name);
-    var mailBody = encodeURIComponent(body.join('\n'));
-
-    var mailto = 'mailto:info@restaurant.example?subject=' + subject + '&body=' + mailBody;
-
-    // open mail client
-    window.location.href = mailto;
-
-    result.textContent = 'Your email client should open with a pre-filled message. If it did not, copy the text below and email info@restaurant.example';
-    result.style.color = 'green';
-
-    // also display the generated message for fallback
-    var pre = document.createElement('pre');
-    pre.textContent = decodeURIComponent(mailBody);
-    result.appendChild(pre);
+// Helper: type text into element, returns Promise when done
+function typeText(elem, text, speed = TYPE_SPEED) {
+  return new Promise(resolve => {
+    elem.textContent = '';
+    let i = 0;
+    const t = setInterval(() => {
+      elem.textContent = text.slice(0, i + 1);
+      i++;
+      if (i >= text.length) {
+        clearInterval(t);
+        setTimeout(resolve, 120); // small settle
+      }
+    }, speed);
   });
+}
+
+// Helper: delete text from element, returns Promise when done
+function deleteText(elem, speed = DELETE_SPEED) {
+  return new Promise(resolve => {
+    let current = elem.textContent;
+    let i = current.length;
+    const t = setInterval(() => {
+      i--;
+      elem.textContent = current.slice(0, i);
+      if (i <= 0) {
+        clearInterval(t);
+        setTimeout(resolve, 80);
+      }
+    }, speed);
+  });
+}
+
+// Typing loop for titles (infinite)
+async function loopTitles(list) {
+  titleElem.innerHTML = '';
+  const span = document.createElement('div');
+  span.className = 'title-text';
+  titleElem.appendChild(span);
+
+  let index = 0;
+  while (true) {
+    const txt = list[index];
+    await typeText(span, txt, TYPE_SPEED);
+    await new Promise(r => setTimeout(r, TITLE_PAUSE));
+    await deleteText(span, DELETE_SPEED);
+    await new Promise(r => setTimeout(r, BETWEEN_TITLES_PAUSE));
+    index = (index + 1) % list.length; // loop
+  }
+}
+
+// Typing for name (only once)
+async function typeNameOnce(text) {
+  await new Promise(r => setTimeout(r, INITIAL_NAME_DELAY));
+  await typeText(nameElem, text, TYPE_SPEED);
+}
+
+// Resume button behavior: toggle 'downloaded' class when clicked to change to blue then revert
+const resumeBtn = document.getElementById('resumeBtn');
+if (resumeBtn) {
+  resumeBtn.addEventListener('click', (e) => {
+    // Add class for visual feedback
+    resumeBtn.classList.add('downloaded');
+
+    // Revert back after 3500ms
+    setTimeout(() => {
+      resumeBtn.classList.remove('downloaded');
+    }, 3500);
+    // Browser default will handle the download (download attribute on the link)
+  });
+}
+
+// Kick off animations when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  typeNameOnce(nameText).catch(console.error);
+  loopTitles(titles).catch(console.error);
+
+  // Highlight "Home" nav item on load (optional)
+  const homeLink = document.querySelector('.nav__link[href="#home"]');
+  if (homeLink) homeLink.classList.add('active');
 });
