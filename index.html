@@ -1,48 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MR. TREVOR AKINOLA — Portfolio</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
 </head>
 <body>
-  <div class="page-fade">
-    <header class="site-header">
-      <nav class="nav">
-        <a class="nav__brand" href="#">TADENI</a>
-        <ul class="nav__links">
-          <li><a class="nav__link active" href="#home">Home</a></li>
-          <li><a class="nav__link" href="#about">About</a></li>
-          <li><a class="nav__link" href="#projects">Projects</a></li>
-          <li><a class="nav__link" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <header>
+        <a href="#" class="logo">Alex</a>
+
+        <nav>
+            <a href="#" class="active"> Home</a>
+            <a href="#" >Services</a>
+            <a href="#" >Skills</a>
+            <a href="#" >Education</a>
+            <a href="#" >Experience</a>
+            <a href="#" >Contact</a>
+        </nav>
     </header>
-
-    <main id="home" class="hero">
-      <div class="hero__inner">
-        <div class="hero__left">
-          <div class="photo-wrap">
-            <img src="assets/trevor.jpg" alt="Trevor Akinola" class="photo" />
-          </div>
+    <section class="home">
+        <div class="home-img">
+            <img src="main.jpg" alt="">
         </div>
-
-        <div class="hero__right">
-          <h1 class="hero__name typing" aria-live="polite">
-            <span id="nameTyping" aria-hidden="true"></span><span class="caret" aria-hidden="true"></span>
-            <span class="sr-only">MR. TREVOR AKINOLA</span>
-          </h1>
-
-          <div class="hero__titles" id="titleTyping" aria-live="polite"></div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Alex</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. Odit similique doloribus tenetur doloremque, sunt commodi in ipsa repudiandae debitis deleniti blanditiis quibusdam quaerat neque asperiores ea.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="#" class="btn">Hire me</a>
         </div>
-      </div>
-    </main>
-  </div>
-
-  <!-- Note: this script tag now points to the actual file you mentioned -->
-  <script src="assets/js/MAIN.JS"></script>
+    </section>
 </body>
 </html>
