@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palazzo 22 – Digital Restaurant Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="palazzo-page">
+
+<header class="p22-header">
+    <a href="index.html" class="logo">P22</a>
+    <nav>
+        <a href="index.html" class="p22-return">Return to Homepage</a>
+    </nav>
+</header>
+
+
+<!-- ================================
+          HERO BANNER / INTRO
+================================ -->
+<section class="p22-section reveal">
+    <h2>Palazzo 22</h2>
+    <p>Your digital transformation prototype. A bespoke design offering clarity, user-friendliness and easy readability</p>
+    
+
+
+<!-- ========================
+     DIGITAL SOLUTIONS
+========================= -->
+<section class="p22-section reveal">
+    <h2>The Newest Digital Solutions at
+        Palazzo 22
+    </h2>
+
+    <div class="solutions-container">
+        <div class="p22-solution">
+            <h3>Interactive Map</h3>
+            <p>Smart location access via Google Maps with route preview, for customers to plan journeys & see parking.</p>
+        </div>
+
+        <div class="p22-solution">
+            <h3>Online Booking</h3>
+            <p>Simplistic reservation system with instant email delivery.</p>
+        </div>
+
+        <div class="p22-solution">
+            <h3>Menu & Pricing</h3>
+            <p>Clear, elegant menu designed for fast decisions, and to entice prior to completing the booking.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========================
+          MENU & PRICING
+========================= -->
+<section class="p22-section reveal">
+    <h2>Our Menu & Prices</h2>
+
+    <div class="p22-menu-wrapper">
+        <div class="p22-menu-container">
+
+            <div class="p22-menu-item">
+                <h4>Dynamite Shrimp</h4>
+                <p>£12</p>
+            </div>
+
+            <div class="p22-menu-item">
+                <h4>Chef Palazzo's Tagliatelle</h4>
+                <p>£15</p>
+            </div>
+
+            <div class="p22-menu-item">
+                <h4>Grilled Salmon & Seabass</h4>
+                <p>£20</p>
+            </div>
+
+            <div class="p22-menu-item">
+                <h4>22 Signature Truffle Tiramisu</h4>
+                <p>£7</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========================
+        BOOK A TABLE
+========================= -->
+<section class="p22-section reveal">
+    <h2>Book a Table</h2>
+    <p>Reserve your spot at Palazzo 22</p>
+
+    <form class="p22-booking-form"
+          action="https://formspree.io/f/mvgddlkv"
+          method="POST">
+          
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+        <input type="date" name="date" required>
+        <input type="time" name="time" required>
+
+        <select name="guests" required>
+            <option value="">Number of Guests</option>
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5 Guests</option>
+            <option value="6+">6+ Guests</option>
+        </select>
+
+        <textarea name="message" placeholder="Additional notes for our team"></textarea>
+
+        <button class="btn" type="submit">Send Reservation</button>
+    </form>
+</section>
+
+<!-- ========================
+            MAP
+========================= -->
+<section class="p22-section p22-map reveal">
+    <h2>Find Us</h2>
+
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19845.508844158692!2d-2.256616!3d53.483959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487ba7454ed422c7%3A0xbbbdb3a105a5382!2sManchester!5e0!3m2!1sen!2suk!4v1700000000000"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+</section>
+
+<!-- ========================
+        SOCIAL LINKS
+========================= -->
+<section class="p22-section reveal">
+    <h2>Follow Us</h2>
+
+    <a href="https://www.instagram.com/explore/tags/food/" 
+       class="p22-social"
+       target="_blank">
+       Instagram
+    </a>
+</section>
+
+<!-- Scroll Animation Script -->
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+    for (let i = 0; i < reveals.length; i++) {
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        let windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight - 120) {
+            reveals[i].classList.add("active");
+        }
+    }
+});
+</script>
+
+</body>
+</html>

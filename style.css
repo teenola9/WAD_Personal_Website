@@ -1,0 +1,1194 @@
+/* ===========================
+   FONTS
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Stack+Sans+Notch:wght@200..700&display=swap');
+
+/* ===========================
+   GLOBAL RESET
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Stack Sans Notch', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: #e1d6c8;
+    color: #000;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    margin-top: 20px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000;
+    font-family: "Momo Trust Display", sans-serif;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.08);
+}
+
+/* ===========================
+   NAVIGATION
+=========================== */
+nav a {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-left: 4rem;
+    color: #000;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffffff;
+    border-bottom: 3px solid #ffffff;
+}
+
+@media(max-width: 995px) {
+    nav {
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        background-color: #161616;
+        border-left: 3px solid #000;
+        border-bottom: 3px solid #000;
+        border-bottom-left-radius: 2rem;
+        padding: 2rem;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        margin: 3rem 0;
+        font-size: 2rem;
+    }
+}
+
+/* ===========================
+   HOME SECTION
+=========================== */
+section {
+    min-height: 100vh;
+    padding: 5rem 9%;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+
+.home-content h1 {
+    font-size: 6rem;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.home-content h1 span {
+    color: #353434;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    max-width: 45rem;
+}
+
+/* ===========================
+   PROFILE IMAGE
+=========================== */
+.home-img img {
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #353434;
+    transition: 0.3s ease;
+}
+
+.home-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px #353434;
+}
+
+/* ===========================
+   SOCIAL ICONS (BIGGER)
+=========================== */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem; /* increased size */
+    height: 6rem; /* increased size */
+    border-radius: 50%;
+    border: 0.25rem solid #000;
+    color: #000;
+    font-size: 3rem; /* bigger icon */
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    background: transparent;
+}
+
+.social-icons a:hover {
+    background: #000;
+    color: #fff;
+    transform: scale(1.2) translateY(-5px);
+    box-shadow: 0 0 25px #000;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    border-radius: 4rem;
+    border: 2px solid #000;
+    background: transparent;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+    color: #000;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    background: #000;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #000;
+}
+
+/* ===========================
+   ROLE ALTERNATION (NO TYPING)
+=========================== */
+.typing-text {
+    font-size: 3.4rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.typing-text span::before {
+    content: "Web Developer";
+    animation: roleswap 12s infinite steps(1);
+    color: #353434;
+}
+
+/* Removed cursor + typing animation */
+.typing-text span::after {
+    display: none !important;
+}
+
+@keyframes roleswap {
+    0%, 20% {
+        content: "CEO/Founder at Tadeni LTD";
+    }
+    21%, 40% {
+        content: "Cybersecurity Analyst";
+    }
+    41%, 60% {
+        content: "Website Developer";
+    }
+    61%, 80% {
+        content: "Marketing Specialist";
+    }
+    81%, 100% {
+        content: "CEO/Founder at Tadeni LTD";
+    }
+}
+
+/* ===========================
+   RESPONSIVE FIXES
+=========================== */
+@media(max-width: 995px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+        margin-top: 3rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.8rem;
+    }
+}
+@media(max-width: 480px) {
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.4rem;
+    }
+
+    .typing-text {
+        font-size: 2.4rem;
+    }
+}
+
+contact
+/* ===========================
+   CONTACT PAGE
+=========================== */
+
+.contact-section {
+    padding-top: 15rem; /* space under header */
+    padding-bottom: 10rem;
+}
+
+.contact-title {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #000;
+    text-align: center;  /* centered */
+}
+
+.contact-sub {
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+    color: #353434;
+    text-align: center; /* centered */
+}
+
+.contact-container {
+    display: flex;
+    gap: 5rem;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* FORM */
+.contact-form {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.contact-form label {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1.2rem 1.5rem;
+    border-radius: 1rem;
+    border: 2px solid #000;
+    background: transparent;
+    font-size: 1.6rem;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #353434;
+}
+
+/* MAP */
+.contact-map {
+    width: 100%;
+    max-width: 550px;
+    height: 450px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 30px;
+    filter: saturate(80%) brightness(105%) contrast(95%); /* Apple Maps style */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* SOCIAL ICONS */
+.social-link svg {
+    width: 35px;
+    height: 35px;
+    fill: #918775;  /* Same as Apple Maps button */
+    transition: fill 0.3s;
+}
+
+.social-link:hover svg {
+    fill: #555;  /* Matches the hover state of Apple Maps button */
+}
+.contact-section {
+    padding-top: 100px; /* increase this number to move it further down */
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+
+/* ===========================
+   PALAZZO 22 PAGE SPECIFIC
+=========================== */
+.palazzo-page {
+    background: url('food.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Stack Sans Notch', sans-serif;
+}
+
+/* SECTIONS */
+.p22-section {
+    padding: 8rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.p22-section h1,
+.p22-section h2 {
+    color: #fff;
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    text-shadow: 3px 3px 5px #000;
+    opacity: 0;
+    animation: headingFadeIn 1s ease forwards;
+}
+
+.p22-section p,
+.p22-section li {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* SOLUTIONS */
+.solutions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.p22-solution {
+    background: rgba(0,0,0,0.6);
+    padding: 2rem;
+    border-radius: 16px;
+    max-width: 350px;
+    flex: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.p22-solution:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.p22-solution h3 { font-size: 3rem; margin-bottom: 1rem; }
+.p22-solution p { font-size: 2rem; }
+
+
+/* BOOKING FORM */
+.p22-booking-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+/* PALAZZO 22 MENU & PRICES - styled like digital solutions */
+.p22-menu-container {
+    display: flex;
+    flex-wrap: wrap;       /* allow wrapping on smaller screens */
+
+    position: center;
+    align-items: flex-start;
+    gap: 3rem;             /* spacing between items */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.p22-menu-item {
+    background: rgba(0,0,0,0.6);
+    padding: 2.5rem;
+    border-radius: 16px;
+    width: 280px;
+    max-width: 100%;
+    flex: 1;
+    position: center;
+    transform: translateY(0);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.5s, box-shadow 0.5s;
+    opacity: 0;
+    animation: fadeInUp 3s ease forwards;
+}
+
+.p22-menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(147, 47, 47, 0.2);
+}
+
+/* Staggered animation for each menu item */
+.p22-menu-item:nth-child(1) { animation-delay: 0.2s; }
+.p22-menu-item:nth-child(2) { animation-delay: 0.4s; }
+.p22-menu-item:nth-child(3) { animation-delay: 0.6s; }
+.p22-menu-item:nth-child(4) { animation-delay: 0.8s; }
+.p22-menu-item:nth-child(5) { animation-delay: 1s; }
+
+/* Text styling */
+.p22-menu-item h4 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.p22-menu-item p {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.p22-booking-form input,
+.p22-booking-form select,
+.p22-booking-form textarea {
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid #fff;
+    font-size: 2rem;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+}
+
+.p22-booking-form textarea { min-height: 150px; }
+
+.p22-booking-form .btn {
+    padding: 2rem;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    font-size: 2.5rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.p22-booking-form .btn:hover { background: #ffd700; transform: scale(1.05); }
+
+/* MAP */
+.p22-map iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    border: 0;
+    border-radius: 25px;
+    filter: saturate(80%) brightness(105%) contrast(95%);
+    margin-top: 2rem;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* SOCIAL ICONS */
+.p22-social-icons {
+    margin-top: 3rem;
+}
+
+.p22-social-icons a {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 1.5rem 2.5rem;
+    font-size: 2.5rem;
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    border-radius: 12px;
+    font-weight: 900;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.p22-social-icons a:hover { background: #ffd700; transform: scale(1.1); }
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+@keyframes fadeInUp { 0% { opacity:0; transform:translateY(50px);} 100% {opacity:1; transform:translateY(0);} }
+@keyframes fadeIn { 0% {opacity:0;} 100% {opacity:1;} }
+@keyframes headingFadeIn { 0% {opacity:0; transform:translateY(-20px) scale(0.95);} 100% {opacity:1; transform:translateY(0) scale(1);} }
+
+/* RESPONSIVE */
+@media(max-width: 1200px) {
+    .p22-menu-container { flex-wrap: wrap; gap: 3rem; }
+}
+
+@media(max-width: 900px) {
+    .solutions-container,
+    .p22-menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .p22-section h1,
+    .p22-section h2 { font-size: 4rem; }
+    .p22-section p, .p22-section li { font-size: 2rem; }
+    .p22-booking-form .btn { font-size: 2rem; }
+}
+
+SKILLS PAGE
+
+/* ========== SKILLS PAGE TIMELINE ========== */
+
+.skills-page {
+    background: #e1d6c8;
+}
+
+.skills-section {
+    padding-top: 15rem;
+    padding-bottom: 10rem;
+    text-align: center;
+}
+
+.skills-title {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 6rem;
+}
+
+/* TIMELINE STRUCTURE */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: #918775;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+/* TIMELINE ENTRY */
+.timeline-item {
+    width: 50%;
+    padding: 3rem 5rem;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+/* DOT */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    width: 25px;
+    height: 25px;
+    background: #353434;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    z-index: 10;
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -13px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -13px;
+}
+
+/* CONTENT BOX */
+.timeline-content {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* TEXT SIZING */
+.timeline-content h2 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+.timeline-content ul li {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: #353434;
+    line-height: 1.5;
+}
+
+/* ANIMATION */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ============================================
+   CORE SKILLS SECTION
+============================================ */
+.core-skills-section {
+    margin-top: 10rem;
+    text-align: center;
+}
+
+.core-skills-title {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    animation: headingFadeIn 1s ease forwards;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.skill-box {
+    background: #ffffff;
+    padding: 3rem 4rem;
+    font-size: 3rem;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+}
+
+.skill-box:nth-child(1) { animation-delay: 0.2s; }
+.skill-box:nth-child(2) { animation-delay: 0.4s; }
+.skill-box:nth-child(3) { animation-delay: 0.6s; }
+.skill-box:nth-child(4) { animation-delay: 0.8s; }
+.skill-box:nth-child(5) { animation-delay: 1s; }
+.skill-box:nth-child(6) { animation-delay: 1.2s; }
+.skill-box:nth-child(7) { animation-delay: 1.4s; }
+
+
+/* ============================================
+   ACHIEVEMENTS SECTION
+============================================ */
+.achievements-section {
+    margin-top: 12rem;
+    text-align: center;
+}
+
+.achievements-title {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    animation: headingFadeIn 1s ease forwards;
+}
+
+.achievements-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+}
+
+.achievement-box {
+    background: #ffffff;
+    padding: 3rem 4rem;
+    width: 80%;
+    max-width: 900px;
+    font-size: 3rem;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+}
+
+.achievement-box:nth-child(1) { animation-delay: 0.2s; }
+.achievement-box:nth-child(2) { animation-delay: 0.4s; }
+.achievement-box:nth-child(3) { animation-delay: 0.6s; }
+.achievement-box:nth-child(4) { animation-delay: 0.8s; }
+
+/* ============================================
+   HOVER ANIMATIONS — PREMIUM LUXURY FEEL
+============================================ */
+
+/* Headings: gentle rise + glow */
+.skills-title:hover,
+.core-skills-title:hover,
+.achievements-title:hover {
+    transform: translateY(-8px);
+    transition: 0.4s ease;
+    text-shadow: 0px 4px 20px rgba(0,0,0,0.25);
+}
+
+/* Timeline items: lift + shadow */
+.timeline-content {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
+
+/* Skill boxes: pop + shadow + border emphasis */
+.skill-box {
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+    border: 3px solid transparent;
+}
+
+.skill-box:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    border: 3px solid #918775;
+}
+
+/* Achievement boxes: glow + lift */
+.achievement-box {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.achievement-box:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+/* Timeline dots pulsing animation */
+.timeline-item::before {
+    animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+    0% { transform: scale(1); background-color: #353434; }
+    50% { transform: scale(1.25); background-color: #918775; }
+    100% { transform: scale(1); background-color: #353434; }
+}
+
+SHOWXCASE PAGE
+
+/* ==========================================================
+   SHOWCASE PAGE
+========================================================== */
+.showcase-page {
+    background: #e1d6c8;
+}
+
+.showcase-section {
+    padding-top: 15rem;
+    padding-bottom: 10rem;
+    text-align: center;
+}
+
+.showcase-title {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    animation: fadeDown 1s ease forwards;
+}
+
+.showcase-sub {
+    font-size: 2.5rem;
+    margin-bottom: 6rem;
+    color: #353434;
+}
+
+/* PROJECT BOXES */
+.showcase-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+}
+
+.showcase-item {
+    background: #fff;
+    padding: 4rem;
+    border-radius: 25px;
+    max-width: 1000px;
+    width: 80%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.13);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+}
+
+/* Hover effect */
+.showcase-item:hover {
+    transform: translateY(-20px) scale(1.03);
+    box-shadow: 0 30px 50px rgba(0,0,0,0.18);
+}
+
+/* Text inside boxes */
+.showcase-item h2 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+
+.showcase-item p {
+    font-size: 2.7rem;
+    line-height: 1.5;
+    color: #353434;
+}
+
+/* Entrance animations: from left or right */
+.fade-left {
+    animation: fadeLeft 1.2s ease forwards;
+}
+
+.fade-right {
+    animation: fadeRight 1.2s ease forwards;
+}
+
+@keyframes fadeLeft {
+    0% { opacity: 0; transform: translateX(-100px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeRight {
+    0% { opacity: 0; transform: translateX(100px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* DESIGN CONCEPT SECTION */
+.design-concepts {
+    margin-top: 12rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.concept-title {
+    font-size: 6rem;
+    margin-bottom: 3rem;
+    animation: fadeDown 1s ease forwards;
+}
+
+.design-concepts p {
+    font-size: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.5;
+    color: #353434;
+}
+
+/* heading animation */
+@keyframes fadeDown {
+    0% { opacity: 0; transform: translateY(-40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ======================================================
+   PALAZZO PAGE — LUXURY RESTAURANT THEME (TADENI BEIGE)
+   With dark overlay + GIF background
+====================================================== */
+
+.palazzo-page {
+    position: relative;
+    background: url('food.gif') center/cover fixed no-repeat;
+    color: #ffffff;
+}
+
+/* DARK + TADENI-BEIGE OVERLAY */
+.palazzo-page::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    background: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(145,135,117,0.55) /* TADENI Beige */
+    );
+    z-index: -1;
+}
+
+/* ======================
+   HEADER – BIGGER + LUXE
+====================== */
+.palazzo-page header {
+    background: transparent;
+    padding: 3rem 6%;
+    margin-top: auto;
+    border-bottom: 2px solid transparent;
+    backdrop-filter: (6px);
+}
+
+.palazzo-page .logo {
+    font-size: 5rem;
+    color: #fff;
+}
+
+.palazzo-page nav a,
+.palazzo-page .p22-return {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.palazzo-page .p22-return:hover {
+    color: #e1d6c8;
+    transform: scale(1.08);
+}
+
+/* ======================
+   GLOBAL TEXT STYLING
+====================== */
+.palazzo-page h1,
+.palazzo-page h2,
+.palazzo-page h3,
+.palazzo-page h4,
+.palazzo-page p,
+.palazzo-page li,
+.palazzo-page a,
+.palazzo-page span {
+    color: #ffffff;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.9);
+}
+
+/* Make it luxurious */
+.palazzo-page h1 { font-size: 7rem; letter-spacing: 0.1rem; }
+.palazzo-page h2 { font-size: 5rem; }
+.palazzo-page h3 { font-size: 4rem; }
+.palazzo-page p, 
+.palazzo-page li { font-size: 3rem; }
+
+/* ======================
+   SECTIONS
+====================== */
+.palazzo-page .p22-section {
+    background: rgba(145,135,117,0.25); /* soft Tadeni beige layer */
+    backdrop-filter: blur(4px);
+    padding: 6rem 6%;
+    border-radius: 20px;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 1.4s ease forwards;
+}
+
+/* ======================
+   MENU & PRICES (side-by-side)
+====================== */
+.palazzo-page .p22-menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    padding: 3rem;
+    border: 3px solid rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.35);
+    border-radius: 25px;
+    backdrop-filter: blur(6px);
+    animation: fadeInUp 1.4s ease forwards;
+}
+
+.palazzo-page .p22-menu-item {
+    background: rgba(255,255,255,0.9);
+    padding: 3rem;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    color: #000;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+    transition: transform 0.5s, box-shadow 0.5s;
+    animation: fadeInUp 1.4s ease forwards;
+}
+
+.palazzo-page .p22-menu-item:hover {
+    transform: translateY(-15px) scale(1.07);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* Titles inside menu boxes */
+.palazzo-page .p22-menu-item h4 {
+    color: #000;
+    text-shadow: none;
+    font-size: 3.5rem;
+}
+
+.palazzo-page .p22-menu-item p {
+    color: #000;
+    text-shadow: none;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* ======================
+   BOOKING FORM
+====================== */
+.palazzo-page .p22-booking-form input,
+.palazzo-page .p22-booking-form select,
+.palazzo-page .p22-booking-form textarea {
+    background: rgba(255,255,255,0.85);
+    border: 3px solid #e1d6c8;
+    font-size: 2.5rem;
+    border-radius: 15px;
+    color: #000;
+}
+
+.palazzo-page .p22-booking-form .btn {
+    background: #e1d6c8;
+    font-size: 3rem;
+    color: #000;
+    border-radius: 16px;
+}
+
+.palazzo-page .p22-booking-form .btn:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+
+/* ======================
+   ANIMATIONS
+====================== */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(60px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* FIX: Push Palazzo 22 intro section below the header + center text */
+.palazzo-page .intro-section {
+    padding-top: 18rem !important;   /* moves text down below the fixed header */
+    text-align: center !important;   /* ensures perfect centering */
+}
+/* FIX: Restore Instagram button visual style */
+.palazzo-page .p22-social-icons a {
+    display: inline-block !important;
+    background: #e1d6c8 !important;
+    color: #000 !important;
+    padding: 1.8rem 3.5rem !important;
+    font-size: 3rem !important;
+    border-radius: 16px !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
+}
+
+.palazzo-page .p22-social-icons a:hover {
+    transform: scale(1.1) !important;
+    background: #fff !important;
+}
+/* Force Instagram section to center properly */
+.palazzo-page .p22-social-icons {
+    text-align: center !important;
+    margin-top: 9rem !important;
+}
+.p22-social {
+    font-size: 5rem;
+    display: inline-block; /* ensures spacing behaves nicely */
+    text-decoration: none; /* optional: remove underline */
+}
+.p22-social:hover {
+    color: #dc912e;
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+.p22-hero .p22-overlay {
+    background: rgba(0, 0, 0, 0.5); /* optional: adjust darkness */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
