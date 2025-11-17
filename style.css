@@ -1192,3 +1192,30 @@ SHOWXCASE PAGE
     z-index: 1;
 }
 
+
+.home-content p a {
+    color: #15110b;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.home-content p a:hover {
+    color: #641171;
+}
+.quick-links {
+    font-size: 2.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    line-height: 2;
+}
+
+.quick-links a {
+    color: #15110b;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.quick-links a:hover {
+    color: #641171;
+}
+
