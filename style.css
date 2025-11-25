@@ -1319,3 +1319,42 @@ SHOWXCASE PAGE
 
 
 privacy page 
+/* Quick Links Styling */
+.quick-links {
+    text-align: center;       
+    background-color: #e1d6c8; 
+    padding: 10px 0;          
+    font-family: 'Momo Trust Display', sans-serif; 
+    font-weight: 400;
+    font-size: 16px;
+    position: fixed;          
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); 
+}
+
+.quick-links a {
+    color: #000;              /* Black text */
+    text-decoration: none;    
+    margin: 0 8px;            
+    transition: color 0.3s;   
+}
+
+.quick-links a:hover {
+    color: #000;              /* Keep black on hover */
+}
+
+/* Responsive: stack links on small screens */
+@media (max-width: 480px) {
+    .quick-links {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+    .quick-links a {
+        display: block;
+        margin: 4px 0;
+    }
+}
+
