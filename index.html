@@ -9,6 +9,43 @@
  <link rel="stylesheet" href="style.css">   
 <title>Portfolio Website</title>
 </head>
+
+<!-- COOKIES POPUP -->
+<div id="cookie-banner" class="cookie-banner hidden">
+  <div class="cookie-box">
+    <p id="cookie-text">
+      We use cookies to improve your experience. Do you accept?
+      <br>
+      <a href="privacy.html" class="cookie-link">View Privacy Policy</a>
+    </p>
+
+    <div class="cookie-buttons">
+      <button id="acceptCookies">Accept All Cookies</button>
+      <button id="declineCookies">Decline</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ALWAYS show the banner on page load
+document.getElementById("cookie-banner").classList.remove("hidden");
+
+// Accept button
+document.getElementById("acceptCookies").addEventListener("click", () => {
+    const text = document.getElementById("cookie-text");
+    text.textContent = "Thank you!";
+    setTimeout(() => {
+        document.getElementById("cookie-banner").classList.add("hide");
+    }, 1500);
+});
+
+// Decline button
+document.getElementById("declineCookies").addEventListener("click", () => {
+    document.getElementById("cookie-banner").classList.add("hide");
+});
+</script>
+
+
 <body>
 <header>
     <a href="index.html" class="logo">TA</a>
@@ -27,13 +64,11 @@
     <div class="home-content">
         <h1><span>Mr. Trevor Akinola</span></h1> 
         <h3 class="typing-text"><span></span></h3>
-        <p>
-  Trevor Akinola. Current CEO/Founder of Tadeni Limited. With a proven track record of sales, marketing and leadership, I am a driven and creative individual with experience in fast-paced environments, premium hospitality, and entrepreneurship.
-  I bring a confident, customer-faced approach. I've gained valuable experience in liaising with individuals from diverse backgrounds, maintaining professional standards, and remaining calm and affirmative under pressure.
-  <br><br>
-  Explore my <a href="skills.html">Skills</a>, <a href="PS.html">Problem Solving</a>, <a href="Showcase.html">Showcase</a>, or <a href="contact.html">Contact</a> sections.
-</p>
-
+        <p> Trevor Akinola. Current CEO/ Founder of Tadeni Limited. With a proven track record of sales, marketing and leadership, I am a driven and creative individual with experience in fast paced environments, premium 
+hospitality, and entrepreneurship.
+            I bring a confident, customer-faced approach. I've gained valuable 
+experience in liaising with individuals from diverse backgrounds, maintaining professional standards, 
+and remaining calm and affirmative under pressure..</p>
 
         <div class="social icons" aria-label="Social links">
             <a href="https://www.linkedin.com/in/trevor-akinola/" class="social-link" aria-label="LinkedIn (opens in new tab)" target="_blank" rel="noopener noreferrer">
