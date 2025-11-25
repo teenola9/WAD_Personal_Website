@@ -1321,7 +1321,9 @@ SHOWXCASE PAGE
 privacy page 
 /* Quick Links Styling */
 .quick-links {
-    text-align: center;       
+    display: flex;
+    justify-content: center;  /* Center links horizontally */
+    align-items: center;      /* Center vertically */
     background-color: #e1d6c8; 
     padding: 10px 0;          
     font-family: 'Momo Trust Display', sans-serif; 
@@ -1333,28 +1335,25 @@ privacy page
     width: 100%;
     z-index: 1000;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1); 
+    gap: 8px;                 /* Space between links */
 }
 
 .quick-links a {
-    color: #000;              /* Black text */
+    color: #000;              
     text-decoration: none;    
-    margin: 0 8px;            
     transition: color 0.3s;   
 }
 
 .quick-links a:hover {
-    color: #000;              /* Keep black on hover */
+    color: #000;              
 }
 
 /* Responsive: stack links on small screens */
 @media (max-width: 480px) {
     .quick-links {
+        flex-direction: column;  /* Stack links vertically */
         font-size: 14px;
         padding: 8px 0;
-    }
-    .quick-links a {
-        display: block;
-        margin: 4px 0;
+        gap: 4px;
     }
 }
-
