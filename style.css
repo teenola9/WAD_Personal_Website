@@ -1319,11 +1319,18 @@ SHOWXCASE PAGE
 
 
 privacy page 
+/* Reset default margins */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 /* Quick Links Styling */
 .quick-links {
     display: flex;
-    justify-content: center;  /* Center links horizontally */
-    align-items: center;      /* Center vertically */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically in the bar */
     background-color: #e1d6c8; 
     padding: 10px 0;          
     font-family: 'Momo Trust Display', sans-serif; 
@@ -1333,8 +1340,7 @@ privacy page
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); 
+    z-index: 9999;            /* Ensures it sits above other content */
     gap: 8px;                 /* Space between links */
 }
 
@@ -1357,3 +1363,4 @@ privacy page
         gap: 4px;
     }
 }
+
