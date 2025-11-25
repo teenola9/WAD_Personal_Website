@@ -1192,30 +1192,130 @@ SHOWXCASE PAGE
     z-index: 1;
 }
 
-
-.home-content p a {
-    color: #15110b;
-    text-decoration: underline;
-    transition: color 0.3s ease;
+/* COOKIES POPUP */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #353434;
+    color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    font-size: 1.6rem;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 9999;
 }
 
-.home-content p a:hover {
-    color: #641171;
+.hidden {
+    opacity: 0;
+    transform: translate(-50%, 20px);
 }
-.quick-links {
-    font-size: 2.5rem;
-    margin: 1.5rem 0;
+
+.hide {
+    opacity: 0;
+    transform: translate(-50%, 30px);
+}
+
+.cookie-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     text-align: center;
-    line-height: 2;
 }
 
-.quick-links a {
-    color: #15110b;
+.cookie-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.cookie-buttons button {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: 0.3s;
+}
+
+.cookie-buttons button:hover {
+    background: #fff;
+    color: #353434;
+    transform: scale(1.05);
+}
+/* COOKIES POPUP */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #353434;
+    color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    font-size: 1.6rem;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 9999;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+}
+
+.hide {
+    opacity: 0;
+    transform: translate(-50%, 30px);
+}
+
+.cookie-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.cookie-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.cookie-buttons button {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: 0.3s;
+}
+
+.cookie-buttons button:hover {
+    background: #fff;
+    color: #353434;
+    transform: scale(1.05);
+}
+
+/* PRIVACY POLICY LINK */
+.cookie-link {
+    color: #ffffff;
     text-decoration: underline;
-    transition: color 0.3s ease;
+    font-size: 1.6rem;
 }
 
-.quick-links a:hover {
-    color: #641171;
+/* visited link colour */
+.cookie-link:visited {
+    color: purple;
 }
 
+
+privacy page 
